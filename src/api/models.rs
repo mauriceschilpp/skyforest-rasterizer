@@ -33,9 +33,11 @@ pub struct BatchResponse {
 
 #[derive(Debug, Deserialize)]
 pub struct CsvPoint {
+    #[serde(alias = "Latitude", alias = "LATITUDE", alias = "lat", alias = "Lat", alias = "LAT")]
     pub latitude: f64,
+    #[serde(alias = "Longitude", alias = "LONGITUDE", alias = "lon", alias = "Lon", alias = "LON", alias = "long", alias = "Long", alias = "LONG")]
     pub longitude: f64,
-    #[serde(default)]
+    #[serde(default, alias = "Name", alias = "NAME")]
     pub name: Option<String>,
 }
 
